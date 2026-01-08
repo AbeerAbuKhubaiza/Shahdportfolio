@@ -34,7 +34,10 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 32px;
+    width: 10vw;
+    max-width: 70px;
+    min-width: 40px;
+    height: auto;
 }
 
 .logo-dot {
@@ -146,20 +149,61 @@ body {
     transition: all 0.3s ease;
 }
 
+/* .btn-gradient {
+    background: linear-gradient(90deg, #FE506E 0%, #AC7FDD 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(254, 80, 110, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+} 
+.btn-gradient:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow:
+        0 10px 20px rgba(254, 80, 110, 0.3),
+        0 20px 40px rgba(254, 80, 110, 0.5);
+    color: #fff;
+}*/
+
+
+
+
+
 .btn-gradient {
     background: linear-gradient(90deg, #FE506E 0%, #AC7FDD 100%);
     color: #fff;
     box-shadow: 0 4px 15px rgba(254, 80, 110, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
 }
 
-.btn-gradient i {
-    font-size: 1.25rem;
+
+.btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: all 0.5s;
+    z-index: -1;
 }
 
 .btn-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(254, 80, 110, 0.4);
-    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(254, 80, 110, 0.6);
+}
+
+.btn-gradient:hover::before {
+    left: 100%;
+}
+
+
+.btn-gradient i {
+    font-size: 1.25rem;
 }
 
 @media (max-width: 768px) {
@@ -638,9 +682,8 @@ body {
 
 
 
-
 .cta-banner {
-    background-image: url('../images/bg.png');
+    background-image: url('../images/bg.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -698,6 +741,8 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+
 
 .btn-white-cta:hover {
     background-color: #f0f0f0;
@@ -775,14 +820,23 @@ body {
 
 
 
+@media (max-width: 768px) {
+
+    .blob-bg,
+    .blur-left,
+    .blur-right,
+    .blur-bottom-right {
+        display: none;
+    }
 
 
+}
 
 
 /* --- تنسيق الفوتر --- */
 .footer-section {
     position: relative;
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 40px;
     background-color: transparent;
     overflow: hidden;
@@ -862,7 +916,7 @@ body {
 }
 
 .footer-nav li a:hover {
-    color: #831AB8;
+    color: #FE516E;
 }
 
 .social-icons-container {
@@ -916,9 +970,10 @@ body {
     font-weight: 400;
 }
 
-.copyright-text span {
+.copyright-text a {
     font-weight: 700;
     color: #333;
+    text-decoration: none;
 }
 
 .scroll-top-btn {
@@ -953,4 +1008,25 @@ body {
 .scroll-top-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(253, 80, 112, 0.4);
+}
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FE506E;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #AC7FDD;
 }
