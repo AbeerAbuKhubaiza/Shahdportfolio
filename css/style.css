@@ -640,7 +640,7 @@ body {
 
 
 .cta-banner {
-    background-image: url('/images/bg.png');
+    background-image: url('../images/bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
